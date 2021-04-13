@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/*navigation*/
+
+.nav {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    z-index: 1;
+    direction: rtl;
+    padding: 0% 10% 0% 10%;
+}
+
+.nav.active {
+    animation: op 0.5s ease forwards;
+}
+
+.nav.des {
+    animation: deop 0.5s ease backwards;
+}
+
+@keyframes op {
+    from {
+        height: 90px;
+        background: rgba(255, 255, 255, 0.7);
+    }
+    to {
+        height: 60px;
+        background: rgba(255, 255, 255, 1);
+    }
+}
+
+@keyframes deop {
+    from {
+        height: 90px;
+        background: rgba(255, 255, 255, 1);
+    }
+    to {
+        height: 60px;
+        background: rgba(255, 255, 255, 0);
+    }
+}
+
+.nav_container {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    direction: ltr;
+    align-items: center;
+}
+
+.nav_container li {
+    position: relative;
+    display: grid;
+    place-items: center;
+    margin: 0 20px 0 20px;
+}
+
+.nav .name {
+    display: inline;
+    margin: 0 auto 0 auto;
+}
+
+.nav .name a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav .name h1 {
+    display: inline;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.nav .name .h2 {
+    color: rgb(5, 236, 109);
+}
+
+.nav input:focus {
+    outline: none;
+}
+
+a {
+    font-size: 22px;
+}
+
+.nav_container li a {
+    text-decoration: none;
+    display: grid;
+    color: white;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav_container.active li a {
+    animation: color 0.5s ease forwards;
+    padding: 5px 10px 5px 10px;
+}
+
+.nav_container.active li a:hover {
+    animation: color 0.5s ease forwards;
+    border-radius: 3px;
+    background-color: rgb(21, 231, 151);
+}
+
+.line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    margin-top: 2px;
+    opacity: 0;
+    left: -10%;
+    top: 100%;
+    transform: translate(0%, 50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.nav_container.active li .line {
+    display: none;
+}
+
+.line .b {
+    width: 60%;
+    height: 4px;
+    margin-right: 1px;
+    background-color: rgb(5, 236, 109);
+    border-radius: 3px;
+}
+
+.line .dot {
+    width: 4px;
+    height: 4px;
+    background-color: rgb(5, 236, 109);
+    margin: 0px 2px 0px 2px;
+    border-radius: 50%;
+}
+
+.a1:hover~.line1 {
+    animation: slide_line 0.5s ease forwards;
+}
+
+.a2:hover~.line2 {
+    animation: slide_line 0.5s ease forwards;
+}
+
+.a3:hover~.line3 {
+    animation: slide_line 0.5s ease forwards;
+}
+
+.a4:hover~.line4 {
+    animation: slide_line 0.5s ease forwards;
+}
+
+@keyframes slide_line {
+    from {
+        left: -20%;
+    }
+    to {
+        left: 0%;
+        opacity: 1;
+    }
+}
+
+@keyframes color {
+    from {
+        color: white;
+    }
+    to {
+        color: black;
+    }
+}
+
+.nav_container li a:hover {
+    color: rgb(21, 231, 151);
+}
+
+
+/************************************/
+
+.main {
+    position: relative;
+    text-align: center;
+    height: 100vh;
+    line-height: auto;
+    overflow: hidden;
+    background: #eeeeee;
+}
+
+.desc {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    top: 40%;
+    left: 5%;
+}
+
+.h1_,
+.h2_ {
+    display: inline;
+    margin: 0% 10px 0 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.h1_ {
+    color: rgb(5, 236, 109);
+}
+
+.desc p {
+    margin-top: 5%;
+}
+
+.hire {
+    width: 130px;
+    height: 50px;
+    background: rgb(5, 236, 109);
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    color: white;
+    margin-top: 10%;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.3s;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+/* On mouse-over, add a deeper shadow */
+
+.hire:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    background: rgba(5, 236, 109, 0.9);
+}
+
+.hire:focus {
+    outline: none;
+}
+
+.shape {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    background-color: rgb(17, 155, 143);
+    top: 0;
+    right: -10%;
+    transform: skewX(25deg);
+}
+
+.pr {
+    position: absolute;
+    width: 40%;
+    animation: slide 1s ease forwards;
+    animation-delay: 000.5s;
+}
+
+@keyframes slide {
+    from {
+        right: -10%;
+    }
+    to {
+        right: 10%;
+    }
+}
+
+.Skills,
+section {
+    height: 100vh;
+    background-color: rgb(86, 61, 224);
+}
+
+.Projects,
+section {
+    height: 100vh;
+    background-color: rgb(30, 210, 69);
+}
+
+.Contact,
+section {
+    height: 100vh;
+    background-color: rgb(199, 42, 107);
+}
+
+
+/*Contact*/
+
+.Contact {
+    position: relative;
+    overflow: hidden;
+}
+
+.cir {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 200px;
+    color: white;
+    user-select: none;
+}
+
+.smile {
+    position: absolute;
+    top: 55%;
+    left: 34%;
+    width: 440px;
+    height: 190px;
+    border-bottom-left-radius: 800px;
+    border-bottom-right-radius: 800px;
+    background-color: none;
+    border: 20px solid white;
+    border-top: none;
+}
+
+.cir1 {
+    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    top: 18%;
+    left: 28%;
+}
+
+.cir2 {
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    top: 18%;
+    left: 58%;
+}
+
+.close {
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    background: red;
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+    display: none;
+}
+
+.cir2.anim {
+    animation: scal 1s ease forwards;
+    background-color: black;
+}
+
+.cir1.anim {
+    animation: scal 1s ease forwards;
+    background-color: black;
+}
+
+@keyframes scal {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(8);
+        top: 30%;
+        left: 45%;
+    }
+}
+
+
+/* Profile layout */
+
+.profile,
+section {
+    position: relative;
+    height: 100vh;
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: row;
+}
+
+.img_container {
+    width: 47vh;
+    height: 70vh;
+    margin-top: 65px;
+    margin-left: 10px;
+    background-color: rgba(81, 219, 166, 1);
+    display: grid;
+    place-items: center;
+    border-bottom: 100px solid rgb(127, 87, 238);
+    border-radius: 30px;
+    border-bottom-right-radius: 42%;
+    opacity: 0;
+}
+
+.img_container.active {
+    animation: img_fade 0.5s ease forwards;
+    animation-delay: 00.2s;
+}
+
+@keyframes img_fade {
+    from {
+        margin-left: -10px;
+    }
+    to {
+        margin-left: 100px;
+        opacity: 1;
+    }
+}
+
+.profile .info {
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0;
+    display: grid;
+    place-items: center;
+}
+
+.info.active {
+    animation: in 1s ease forwards;
+    animation-delay: 000.5s;
+}
+
+@keyframes in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.det {
+    margin-top: 65px;
+    height: 50%;
+    width: 50%;
+}
+
+.det h1 {
+    color: rgb(10, 151, 151);
+    margin: -40px 0 20px 0;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.social li {
+    margin: 0 10px 0 10px;
+}
+
+.s {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.info h5 {
+    margin-bottom: -100px;
+}
